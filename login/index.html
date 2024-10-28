@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+      <meta charset="utf-8">
+      <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="zStyle.css">
+      <title> formulario </title>
+<link rel="stylesheet" href="zStyle.css">
+</head>
+<body>
+	<gradient>
+	<section class="form-register">
+		<h4> FORMULARIO DE REGISTRO</h4>
+    <form onsubmit="event.preventDefault(); registrar();">
+        <input type="text" id="username" class="controls" required placeholder="Ingrese su Correo">
+        <br>
+        <br>
+        <input type="password" id="password" class="controls" required placeholder="Ingrese su Contraseña">
+        <br>
+        <br>
+        <input type="text" id="name" class="controls" required placeholder="Ingrese su Nombre">
+        <br>
+        <br>
+        <input type="text" id="lastname" class="controls" required placeholder="Ingrese su Apellido">
+		<p>Acepto los<a href="https://s2.studylib.es/store/data/005713788_1-437040c271cde1fd48a0f2dfa132c3f6-768x994.png"> Terminos y condiciones</a></p>
+		<a href="inicio.html" value="registrar"><button>Registrar</button></a>
+    </form>
+		
+    
+		
+	</section>
+
+</gradient>
+
+
+    </body>
+
+    <script>
+
+        function registrar() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("GRACIAS por registrarte, ahora INICIA SESIÓN para ver nuestro catalogo de licores");
+            window.location.href = "inicio.html";
+        }
+    </script>
+
+
+</html>
