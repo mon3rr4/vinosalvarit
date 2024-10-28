@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>INICIO</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+    <form onsubmit="event.preventDefault(); iniciarSesion();">
+                <h1>Iniciar sesión</h1>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/signin" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+                <span>ingresa tu email y contraseña</span>
+                <input type="text" placeholder="Gmail" id="username">
+                <input type="password" placeholder="Contraseña" id="password">
+                <a href="https://es.wikihow.com/recordar-una-contraseña-olvidada">No te acuerdas de tu contraseña?</a>
+                <a href="cata.html" value="Iniciar Sesión"><button>Iniciar sesión</button></a>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>HOLA AMIGO!</h1>
+                    <p>:)</p>
+                    <a href="index.html">
+                    <button class="hidden" id="register">Inscribirse</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <script>
+        function iniciarSesion() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+
+            if (username === storedUsername && password === storedPassword) {
+                alert("Bienvenido a Vinitos y mas " + username + "!");
+
+                window.location.href = "cata.html"; 
+            } else {
+                alert("Correo o Contraseña Incorrectos");
+            }
+        }
+    </script>
+
+</html>
